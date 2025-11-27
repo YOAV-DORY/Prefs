@@ -17,8 +17,7 @@ const PORT = process.env.PORT || 3000;
 // PREFS_API_KEY = מפתח סודי שהפלטפורמות יצטרכו כדי לקרוא ל-API
 const PREFS_API_KEY = process.env.PREFS_API_KEY || "dev-local-key";
 
-// parsing של גוף הבקשה בפורמט JSON
-app.use(express.json());
+
 
 /**
  * פונקציה שטוענת את ההעדפות מקובץ prefs-profile.json
@@ -84,3 +83,6 @@ app.listen(PORT, () => {
   console.log(`Prefs API server is running on http://localhost:${PORT}`);
   console.log(`Using PREFS_API_KEY = ${PREFS_API_KEY}`);
 });
+
+// parsing של גוף הבקשה בפורמט JSON
+app.use(express.json());
