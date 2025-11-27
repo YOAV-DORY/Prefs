@@ -3,7 +3,7 @@ info:
   title: Prefs API
   version: 1.0.0
 servers:
-  - url: https://prefs.onrender.com
+  - url: https://PREFS_API_URL
 paths:
   /v1/preferences/{userId}:
     get:
@@ -19,8 +19,6 @@ paths:
           description: The user identifier used by the calling platform.
           schema:
             type: string
-      security:
-        - apiKeyAuth: []
       responses:
         "200":
           description: User preferences profile
@@ -32,11 +30,6 @@ paths:
           description: Unauthorized - invalid API key
 
 components:
-  securitySchemes:
-    apiKeyAuth:
-      type: apiKey
-      in: header
-      name: x-api-key
   schemas:
     UserPreferencesResponse:
       type: object
