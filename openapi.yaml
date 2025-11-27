@@ -1,0 +1,46 @@
+openapi: 3.1.0
+info:
+  title: Prefs API
+  version: 1.0.0
+servers:
+  - url: https://YOUR-DOMAIN-OR-RENDER-URL
+paths:
+  /v1/preferences/{userId}:
+    get:
+      summary: Get user preferences profile
+      description: >
+        Returns a user preference profile that describes how the user prefers
+        to receive answers (length, structure, style, etc.).
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          description: The user identifier used by the calling platform.
+          schema:
+            type: string
+      security:
+        - apiKeyAuth: []
+      responses:
+        "200":
+          description: User preferences profile
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user_id:
+                    type: string
+                  prefs_version:
+                    type: string
+                  created_at:
+                    type: string
+                  preferences:
+                    type: object
+        "401":
+          description: Unauthorized - invalid API key
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key

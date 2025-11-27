@@ -1,0 +1,31 @@
+{
+  "prefs_version": "1.0",
+  "created_at": "2025-11-25T20:33:13.613000",
+  "preferences": {
+    "content": {
+      "answer_length": "ultra_concise",
+      "reasoning_depth": "brief_why"
+    },
+    "style": {
+      "tone": "friendly",
+      "language_style": "adaptive"
+    },
+    "format": {
+      "structure": "numbered",
+      "visual_formatting": "visual_heavy"
+    },
+    "ui_design": {
+      "color_intensity": "gradient",
+      "spacing_preference": "wide",
+      "layout_density": "dense",
+      "typography_style": "classic",
+      "icon_preference": "icon_rich",
+      "animation_level": "moderate",
+      "card_style": "flat",
+      "shape_language": "organic"
+    },
+    "ux": {
+      "information_display": "compact_expandable"
+    }
+  }
+}
