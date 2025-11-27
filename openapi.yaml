@@ -3,10 +3,11 @@ info:
   title: Prefs API
   version: 1.0.0
 servers:
-  - url: https://prefs.onrender.com
+  - url: https://prefs.onrender.com/
 paths:
   /v1/preferences/{userId}:
     get:
+      operationId: getUserPreferences
       summary: Get user preferences profile
       description: >
         Returns a user preference profile that describes how the user prefers
@@ -26,21 +27,52 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  user_id:
-                    type: string
-                  prefs_version:
-                    type: string
-                  created_at:
-                    type: string
-                  preferences:
-                    type: object
+                $ref: "#/components/schemas/UserPreferencesResponse"
         "401":
           description: Unauthorized - invalid API key
+
 components:
   securitySchemes:
     apiKeyAuth:
       type: apiKey
       in: header
       name: x-api-key
+  schemas:
+    UserPreferencesResponse:
+      type: object
+      properties:
+        user_id:
+          type: string
+        prefs_version:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        preferences:
+          type: object
+          properties:
+            content:
+              type: object
+              properties:
+                answer_length:
+                  type: string
+                reasoning_depth:
+                  type: string
+            style:
+              type: object
+              properties:
+                tone:
+                  type: string
+                language_style:
+                  type: string
+            format:
+              type: object
+              properties:
+                structure:
+                  type: string
+                visual_formatting:
+                  type: string
+            ui_design:
+              type: object
+            ux:
+              type: object
