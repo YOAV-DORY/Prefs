@@ -3,7 +3,7 @@ info:
   title: Prefs API
   version: 1.0.0
 servers:
-  - url: https://prefs.onrender.com/
+  - url: https://prefs.onrender.com
 paths:
   /v1/preferences/{userId}:
     get:
